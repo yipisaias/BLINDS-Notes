@@ -16,7 +16,7 @@
         android:id="@+id/textView"
         android:layout_width="334dp"
         android:layout_height="80dp"
-        android:text="Adicionar nota"
+        android:text="Editar nota"
         android:textSize="30sp"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp"/>
@@ -32,7 +32,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:hint="Nova nota"
+            android:hint=""
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Salvar"
+        android:text="Salvar Alterações"
         app:backgroundTint="##978F8F"
         app:layout_anchorGravity="bottom|center"
         android:layout_gravity="bottom|end"

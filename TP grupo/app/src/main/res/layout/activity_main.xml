@@ -153,5 +153,14 @@
         app:backgroundTint="#978F8F"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="334dp"
+        android:layout_height="80dp"
+        android:text="BLIND Notes"
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"/>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

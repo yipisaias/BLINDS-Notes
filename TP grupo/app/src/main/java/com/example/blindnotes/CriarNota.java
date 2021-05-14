@@ -35,7 +35,7 @@ public class CriarNota extends AppCompatActivity implements AdapterView.OnItemSe
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        binding.spinner1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -77,4 +77,10 @@ public class CriarNota extends AppCompatActivity implements AdapterView.OnItemSe
                 break;
 
         }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        
+    }
 }
