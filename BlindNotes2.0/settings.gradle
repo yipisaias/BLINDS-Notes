@@ -1,0 +1,2 @@
+rootProject.name = "BlindNotes2.0"
+include ':app'
