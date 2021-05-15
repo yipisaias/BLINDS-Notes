@@ -7,11 +7,11 @@
     tools:context=".EditarNota">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.BlindNotes20.AppBarOverlay">
-
-    </com.google.android.material.appbar.AppBarLayout>
+        android:theme="@style/Theme.BlindNotes20.AppBarOverlay"
+        tools:ignore="MissingConstraints"></com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_editar_nota" />
     <TextView
@@ -46,6 +46,8 @@
         android:layout_margin="@dimen/fab_margin"
         android:layout_marginTop="50dp"
         android:text="Salvar Alterações"
-        app:layout_anchorGravity="bottom|center" />
+        app:layout_anchorGravity="bottom|center"
+        android:onClick="irParaMain"
+       />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
