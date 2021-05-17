@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "note_table")
 public class Note {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "uid")
     public int uid;
 
@@ -17,13 +17,13 @@ public class Note {
     @ColumnInfo(name = "cor_nota")
     public String corNota;
 
-    public Note(@NonNull int uid, @NonNull String textoNota, @NonNull String corNota) {
-        this.uid = uid;
-        this.corNota = corNota;
-        this.textoNota = textoNota;
-    }
-
     @NonNull
     public String getTextoNota(){return this.textoNota;}
+
+    @NonNull
+    public int getId(){ return this.uid;}
+
+    @NonNull
+    public String getCorNota(){return this.corNota;}
 
 }

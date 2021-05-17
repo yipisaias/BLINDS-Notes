@@ -25,4 +25,21 @@ public class NoteRepository {
             mNoteDao.insert(note);
         });
     }
+    void delete(Note note) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            mNoteDao.delete(note);
+        });
+    }
+    void update(Note note) {
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            mNoteDao.update(note);
+        });
+    }
+
+    //void getNoteByText(String texto) {
+     //   AppDatabase.databaseWriteExecutor.execute(() -> {
+     //      return mNoteDao.findByText(texto);
+    //    });
+   // }
+
 }
