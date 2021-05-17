@@ -22,7 +22,7 @@ public class NoteListAdapter extends ListAdapter<Note, NoteViewHolder> {
     @Override
     public void onBindViewHolder(NoteViewHolder holder, int position) {
         Note current = getItem(position);
-        holder.bind(current.getTextoNota());
+        holder.bind(current);
     }
 
     static class NoteDiff extends DiffUtil.ItemCallback<Note> {

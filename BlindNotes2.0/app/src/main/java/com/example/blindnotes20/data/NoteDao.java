@@ -6,33 +6,38 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
 @Dao
 public interface NoteDao {
     @Query("SELECT * FROM note_table")
-    LiveData<List<Note>> getAll();
+    public LiveData<List<Note>> getAll();
 
     @Query("SELECT * FROM note_table WHERE uid IN (:userIds)")
-    LiveData<List<Note>> loadAllByIds(int[] userIds);
+    public LiveData<List<Note>> loadAllByIds(int[] userIds);
 
     @Query("SELECT * FROM note_table WHERE texto_nota LIKE :texto ")
-    Note findByText(String texto);
+    public Note findByText(String texto);
 
     @Query("SELECT * FROM note_table WHERE cor_nota LIKE :cor ")
-    Note findByColor(String cor);
+    public Note findByColor(String cor);
 
     @Insert
-    void insertAll(Note... users);
+    public void insertAll(Note... users);
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(Note note);
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    public void insert(Note note);
 
     @Delete
-    void delete(Note user);
+    public void delete(Note user);
 
     @Query("DELETE FROM note_table")
-    void deleteAll();
+    public void deleteAll();
+
+    @Update
+    public void update(Note note);
+
 
 }
