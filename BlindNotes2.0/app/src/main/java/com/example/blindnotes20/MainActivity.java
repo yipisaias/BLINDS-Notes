@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
             Note note = new Note();
-            note.textoNota = data.getStringExtra(CriarNota.COLOR_NOTE);
+            note.textoNota = data.getStringExtra(CriarNota.EXTRA_REPLY);
             if(CriarNota.COLOR_NOTE.contentEquals("azul")){
                 note.corNota = Color.parseColor("#FFADD8E6");
             }else
