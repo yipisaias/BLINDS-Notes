@@ -1,6 +1,7 @@
 package com.example.blindnotes20;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.example.blindnotes20.data.Note;
@@ -102,8 +103,25 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
             Note note = new Note();
-            note.textoNota = data.getStringExtra(CriarNota.EXTRA_REPLY);
-            note.corNota = "@android:color/white";
+            note.textoNota = data.getStringExtra(CriarNota.COLOR_NOTE);
+            if(CriarNota.COLOR_NOTE.contentEquals("azul")){
+                note.corNota = Color.parseColor("#FFADD8E6");
+            }else
+            if(CriarNota.COLOR_NOTE.contentEquals("amarelo")){
+                note.corNota = Color.parseColor("#FFFFFACD");
+            }
+            else if(CriarNota.COLOR_NOTE.contains("laranja")){
+                note.corNota =  Color.parseColor("#FFFFA04F");
+            }
+            else if(CriarNota.COLOR_NOTE.contains("verde")){
+                note.corNota =  Color.parseColor("#FF9AFF9A");
+            }
+            else if(CriarNota.COLOR_NOTE.contains("vermelho")){
+                note.corNota =  Color.parseColor("#FFFF6A6A");
+            }
+            else if(CriarNota.COLOR_NOTE.contains("roxo")){
+                note.corNota =  Color.parseColor("#FFE6E6FA");
+            }
             mNoteViewModel.insert(note);
         } else
         if (requestCode == EDIT_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {

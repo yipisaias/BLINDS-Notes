@@ -1,5 +1,7 @@
 package com.example.blindnotes20.data;
 
+import android.graphics.Color;
+
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -22,7 +24,7 @@ public interface NoteDao {
     public Note findByText(String texto);
 
     @Query("SELECT * FROM note_table WHERE cor_nota LIKE :cor ")
-    public Note findByColor(String cor);
+    public Note findByColor(int cor);
 
     @Insert
     public void insertAll(Note... users);

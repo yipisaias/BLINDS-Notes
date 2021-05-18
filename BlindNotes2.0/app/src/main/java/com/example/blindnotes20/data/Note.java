@@ -1,5 +1,8 @@
 package com.example.blindnotes20.data;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -15,7 +18,7 @@ public class Note {
     public String textoNota;
 
     @ColumnInfo(name = "cor_nota")
-    public String corNota;
+    public int corNota;
 
     @NonNull
     public String getTextoNota(){return this.textoNota;}
@@ -24,6 +27,6 @@ public class Note {
     public int getId(){ return this.uid;}
 
     @NonNull
-    public String getCorNota(){return this.corNota;}
+    public int getCorNota(){return this.corNota;}
 
 }
