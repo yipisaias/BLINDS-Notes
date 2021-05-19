@@ -27,3 +27,7 @@ funcionalidades a serem desenvolvidas são:<br/>
 Essa aplicação será desenvolvida para a plataforma Android, basendo-se em
 conteúdos passados durante a aula, pesquisas adicionais e conhecimentos
 individuais de cada integrante.
+## Observações:
+Na versão atual do app, as cores ainda não serão escolhidas pelo usuário, mas 
+randomicamente, por uma lógica interna.
+A edição das notas também ainda não está disponível.
