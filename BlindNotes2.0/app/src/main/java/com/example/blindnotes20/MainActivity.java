@@ -102,27 +102,42 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Note note = new Note();
-            note.textoNota = data.getStringExtra(CriarNota.EXTRA_REPLY);
-            if(CriarNota.COLOR_NOTE.contentEquals("azul")){
-                note.corNota = Color.parseColor("#FFADD8E6");
+                Note note = new Note();
+                note.textoNota = data.getStringExtra(CriarNota.TEXTO);
+                double id = (Math.random()*((10-1)+1))+1;
+                if(id < 1.0){
+                    note.corNota =  Color.parseColor("#FAEBD7");
+                }else
+            if(id < 2.0){
+                note.corNota =  Color.parseColor("#FFFACD");
             }else
-            if(CriarNota.COLOR_NOTE.contentEquals("amarelo")){
-                note.corNota = Color.parseColor("#FFFFFACD");
+            if(id < 3.0){
+                note.corNota =  Color.parseColor("#EEE8AA");
+            }else
+            if(id < 4.0){
+                note.corNota =  Color.parseColor("#FFE4E1");
+            }else
+            if(id < 5.0){
+                note.corNota =  Color.parseColor("#E6E6FA");
+            }else
+            if(id < 6.0){
+                note.corNota =  Color.parseColor("#E0FFFF");
+            }else
+            if(id < 7){
+                note.corNota =  Color.parseColor("#DCDCDC");
+            }else
+            if(id < 8){
+                note.corNota =  Color.parseColor("#F5DEB3");
+            }else
+            if(id < 9){
+                note.corNota =  Color.parseColor("#FFDAB9");
+            }else
+                if(id < 10){
+                note.corNota =  Color.parseColor("#B0E0E6");
             }
-            else if(CriarNota.COLOR_NOTE.contains("laranja")){
-                note.corNota =  Color.parseColor("#FFFFA04F");
-            }
-            else if(CriarNota.COLOR_NOTE.contains("verde")){
-                note.corNota =  Color.parseColor("#FF9AFF9A");
-            }
-            else if(CriarNota.COLOR_NOTE.contains("vermelho")){
-                note.corNota =  Color.parseColor("#FFFF6A6A");
-            }
-            else if(CriarNota.COLOR_NOTE.contains("roxo")){
-                note.corNota =  Color.parseColor("#FFE6E6FA");
-            }
-            mNoteViewModel.insert(note);
+
+
+                mNoteViewModel.insert(note);
         } else
         if (requestCode == EDIT_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
             //String textoAntigo =  data.getStringExtra(EditarNota.TEXTO_ANTIGO);
@@ -132,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             //note.corNota = "@android:color/white";
            // mNoteViewModel.update(note);
         }
-            else {
+        else {
             Toast.makeText(
                     getApplicationContext(),
                     R.string.empty_not_saved,

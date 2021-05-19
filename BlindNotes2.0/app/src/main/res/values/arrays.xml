@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="colors_array" >
-        <item>azul</item>
-        <item>amarelo</item>
-        <item>laranja</item>
-        <item>verde</item>
-        <item>vermelho</item>
-        <item>roxo</item>
+    <string-array name="colors_array">
+        <item>FFFFAB</item>
+        <item>FF0000</item>
+        <item>FF7F00</item>
+        <item>00FF7F</item>
+        <item>7F00FF</item>
     </string-array>
 </resources>

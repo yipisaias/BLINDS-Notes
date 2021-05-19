@@ -12,9 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import static android.graphics.Color.BLUE;
+
 public class CriarNota extends AppCompatActivity {
-    public static final String EXTRA_REPLY = "com.example.android.notelistsql.REPLY";
-    public static final String COLOR_NOTE = "com.example.android.notelistsql.COLOR_NOTE";
+    public static final String TEXTO = "com.example.android.notelistsql.TEXTO";
     private EditText mEditNoteView;
 
     @Override
@@ -22,14 +23,13 @@ public class CriarNota extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criar_nota);
         mEditNoteView = findViewById(R.id.edit_note);
-        Spinner spinner = (Spinner) findViewById(R.id.colors_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.colors_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+        ////Spinner spinner = (Spinner) findViewById(R.id.colors_spinner);
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+        ////        R.array.colors_array, android.R.layout.simple_spinner_item);
+
+        //  adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //// spinner.setAdapter(adapter);
         final Button button = findViewById(R.id.button_save);
         button.setOnClickListener(view -> {
             Intent replyIntent = new Intent();
@@ -37,10 +37,11 @@ public class CriarNota extends AppCompatActivity {
                 setResult(RESULT_CANCELED, replyIntent);
             } else {
                 String word = mEditNoteView.getText().toString();
-                String colorNote = spinner.getSelectedItem().toString();
-                replyIntent.putExtra(EXTRA_REPLY, word);
 
-                replyIntent.putExtra(COLOR_NOTE, colorNote);
+                    replyIntent.putExtra(TEXTO, word);
+
+
+
                 setResult(RESULT_OK, replyIntent);
             }
             finish();
